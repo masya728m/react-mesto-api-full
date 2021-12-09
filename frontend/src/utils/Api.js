@@ -81,7 +81,7 @@ class AuthApi extends Api {
 }
 
 export const authApi = new AuthApi({
-  baseUrl: process.env.REACT_APP_AUTH_API_URL,
+  baseUrl: 'https://api.bulkin.students.nomoredomains.rocks',
   headers: {
     'Content-Type': 'application/json'
   }
