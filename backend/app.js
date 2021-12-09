@@ -3,6 +3,7 @@ require('dotenv')
 const express = require('express');
 const mongoose = require('mongoose');
 const {errors} = require('celebrate');
+const {requestLogger, errorLogger} = -require('./middlewares/logger');
 const NotFoundError = require('./errors/notFoundError');
 
 const {
@@ -12,11 +13,15 @@ const {
 
 const app = express();
 
-app.use(require('./middlewares/cors'))
+app.use(requestLogger);
+
+app.use(require('./middlewares/cors'));
 
 app.use(require('./routes/index'));
 
 app.use((req, res, next) => next(new NotFoundError('not found')));
+
+app.use(errorLogger);
 
 app.use(errors());
 
