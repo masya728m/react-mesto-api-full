@@ -58,7 +58,6 @@ function App() {
           profileId: info._id,
           email: info.email
         });
-        console.log(currentUser);
         cardList = Array.from(cardList).map(card => {
           const isLiked = Array.from(card.likes).some(like => like === info._id);
           return {
@@ -68,9 +67,7 @@ function App() {
         });
         setCards(cardList);
       })
-      .catch(err => {
-        console.log(err);
-      });
+      .catch(console.error);
   }, [loggedIn]);
 
   const closeAllPopups = () => {
@@ -97,7 +94,7 @@ function App() {
         });
         closeAllPopups();
       })
-      .catch(console.log);
+      .catch(console.error);
 
   };
 
@@ -107,7 +104,7 @@ function App() {
         setCards([card, ...cards]);
         closeAllPopups();
       })
-      .catch(console.log);
+      .catch(console.error);
 
   };
 
@@ -125,7 +122,7 @@ function App() {
         });
         closeAllPopups();
       })
-      .catch(console.log);
+      .catch(console.error);
 
   };
 
@@ -149,7 +146,7 @@ function App() {
         const newCards = Array.from(cards).map(card => card._id === cardObj._id ? cardObj : card);
         setCards(newCards);
       })
-      .catch(console.log);
+      .catch(console.error);
 
   };
 
@@ -159,18 +156,16 @@ function App() {
   };
 
   const handleDeleteConfirmSubmit = () => {
-    console.log(targetCard);
     authApi.deleteCard(targetCard._id)
       .then(() => {
         setCards(cards.filter(card => card._id !== targetCard._id));
         closeAllPopups();
       })
-      .catch(console.log);
+      .catch(console.error);
 
   };
 
   const handleLoginSuccess = (res) => {
-    console.log(res);
     if (!res.token)
       return;
     localStorage.setItem('jwt', res.token);
