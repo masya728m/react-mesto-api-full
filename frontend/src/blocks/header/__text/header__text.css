@@ -1,0 +1,12 @@
+.header__text {
+  color: white;
+  background-color: black;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
+  font-weight: normal;
+  font-size: 18px;
+}
+

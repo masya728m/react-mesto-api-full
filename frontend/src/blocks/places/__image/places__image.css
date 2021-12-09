@@ -1,0 +1,27 @@
+.places__image {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  height: 282px;
+  cursor: pointer;
+  background-color: grey;
+  background-size: cover;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .places__image {
+    height: calc(282 * calc(100vw / 1280));
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .places__image {
+    height: calc(282 * calc(100vw / 768));
+  }
+}
+
+@media screen  and (max-width: 425px) {
+  .places__image {
+    height: 282px;
+  }
+}

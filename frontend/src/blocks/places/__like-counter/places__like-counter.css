@@ -1,0 +1,11 @@
+.places__like-counter {
+  color: black;
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: auto;
+  height: auto;
+  text-align: center;
+  font-weight: 400;
+  font-size: 13px;
+}

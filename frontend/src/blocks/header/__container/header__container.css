@@ -1,0 +1,30 @@
+.header__container {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+
+.header__container:before {
+  content: '';
+  position: absolute;
+  opacity: 0.7;
+  z-index: -1;
+  width: calc(880 * (100vw / 1280));
+  max-width: 880px;
+  height: 100%;
+  border-bottom: 1px solid #545454;
+}
+
+
+@media screen and (max-width: 425px) {
+  .header__container:before {
+    width: 100%;
+    border-top: 1px solid #545454;
+  }
+
+  .header__container {
+    height: 83px;
+    align-items: center;
+  }
+}
+

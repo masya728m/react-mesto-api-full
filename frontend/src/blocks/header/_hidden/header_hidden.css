@@ -1,0 +1,9 @@
+.header_hidden {
+  display: none !important;
+}
+
+@media screen and (min-width: 425px) {
+  .header_hidden {
+    display: flex !important;
+  }
+}

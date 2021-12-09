@@ -1,0 +1,16 @@
+.places__like-button {
+  background-image: url("../../../images/like-button-disabled.svg");
+  background-size: cover;
+  display: block;
+  width: 22px;
+  height: 19px;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  margin-right: 0;
+  cursor: pointer;
+}
+
+.places__like-button:hover {
+  opacity: 0.5;
+}

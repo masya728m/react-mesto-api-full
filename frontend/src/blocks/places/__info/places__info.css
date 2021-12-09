@@ -1,0 +1,11 @@
+.places__info {
+  object-fit: cover;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 87.234%;
+  margin: 0 auto;
+}

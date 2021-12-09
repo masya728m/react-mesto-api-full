@@ -1,0 +1,9 @@
+.unauthorized-container__fieldset {
+  margin-top: 50px !important;
+}
+
+@media screen and (max-width: 425px) {
+  .unauthorized-container__fieldset {
+    margin-top: 40px !important;
+  }
+}

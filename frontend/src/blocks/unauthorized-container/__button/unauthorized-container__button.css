@@ -1,0 +1,12 @@
+.unauthorized-container__button {
+  background-color: #FFFFFF !important;
+  color: black !important;
+  margin-top: 216px !important;
+}
+
+@media screen and (max-width: 425px) {
+  .unauthorized-container__button {
+    margin: 173px 30px 0 !important;
+  }
+}
+

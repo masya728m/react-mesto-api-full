@@ -1,0 +1,26 @@
+.header__side-container {
+  display: flex;
+  gap: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .header__side-container {
+    margin-top: 6px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__side-container {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+}
+
+
+@media screen and (max-width: 425px) {
+  .header__side-container {
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+}
