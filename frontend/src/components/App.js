@@ -45,6 +45,10 @@ function App() {
   React.useEffect(() => {
     if (!loggedIn)
       return;
+    const token = localStorage.getItem('jwt');
+    if (!token)
+      return;
+    authApi.setToken(token);
     Promise.all([authApi.getUserInfo(), authApi.getInitialCards()])
       .then(([info, cardList]) => {
         setCurrentUser({
@@ -52,10 +56,11 @@ function App() {
           name: info.name,
           about: info.about,
           profileId: info._id,
-          email: info.data.email
+          email: info.email
         });
+        console.log(currentUser);
         cardList = Array.from(cardList).map(card => {
-          const isLiked = Array.from(card.likes).some(like => like._id === info._id);
+          const isLiked = Array.from(card.likes).some(like => like === info._id);
           return {
             ...card,
             isLiked
@@ -137,7 +142,7 @@ function App() {
   };
 
   const handleCardLike = (card) => {
-    const isLiked = !Array.from(card.likes).some(like => like._id === currentUser.profileId);
+    const isLiked = !Array.from(card.likes).some(like => like === currentUser.profileId);
     authApi.changeLikeCardStatus(isLiked, card._id)
       .then(cardObj => {
         cardObj.isLiked = isLiked;
@@ -171,6 +176,7 @@ function App() {
     localStorage.setItem('jwt', res.token);
     setLoggedIn(true);
     appHistory.push('/');
+    authApi.setToken(res.token);
   };
 
   const handleRegisterSuccess = () => {

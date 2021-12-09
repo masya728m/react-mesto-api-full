@@ -35,7 +35,7 @@ export class Api {
 
   changeLikeCardStatus(like, cardId) {
     const method = like ? 'PUT' : 'DELETE';
-    return this._request(method, `/cards/likes/${cardId}`);
+    return this._request(method, `/cards/${cardId}/likes`);
   }
 
 

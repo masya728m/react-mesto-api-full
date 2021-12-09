@@ -27,7 +27,7 @@ export default function Card(props) {
         <div className="places__like-container">
           <button
             className={
-              `places__like-button ${props.likes.some(like => like._id === currentUser.profileId) && likeModifier}`
+              `places__like-button ${props.likes.some(like => like === currentUser.profileId) && likeModifier}`
             }
             type="button"
             onClick={handleCardLike}/>

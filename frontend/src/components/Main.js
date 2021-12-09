@@ -30,7 +30,7 @@ export default function Main(props) {
               placeName={card.name}
               placeImage={card.link}
               likes={card.likes}
-              ownerId={card.owner._id}
+              ownerId={card.owner}
               isLiked={card.isLiked}
               onLike={props.onCardLike}
               onDelete={props.onCardDelete}
