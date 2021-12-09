@@ -184,6 +184,15 @@ function App() {
     setInfoTooltipOpen(true);
   };
 
+  const handleLogout = () => {
+    setLoggedIn(false);
+    setCurrentUser({});
+    setCards([]);
+    setTargetCard({});
+    setAuthSuccess(false);
+    localStorage.removeItem('jwt');
+  }
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
@@ -196,10 +205,7 @@ function App() {
                   to="/login"
                   className="header__text header__text_type_button"
                   type="button"
-                  onClick={() => {
-                    setLoggedIn(false);
-                    localStorage.removeItem('jwt');
-                  }}
+                  onClick={handleLogout}
                 >
                   Выйти
                 </Link>
