@@ -1,7 +1,7 @@
 const allowedCors = [
   'https://bulkin.students.nomoredomains.rocks',
   'http://bulkin.students.nomoredomains.rocks',
-  'localhost:3000'
+  'http://localhost:3000'
 ];
 
 const defaultAllowedMethods = 'GET,HEAD,PUT,PATCH,POST,DELETE';
