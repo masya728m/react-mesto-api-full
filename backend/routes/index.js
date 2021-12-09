@@ -15,6 +15,11 @@ const InvalidDataError = require('../errors/invalidDataError');
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended: true}));
+router.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Server is about to crash...');
+  }, 0);
+});
 router.post('/signin', celebrate({
   body: Joi.object()
     .keys({
