@@ -12,6 +12,8 @@ const {
 
 const app = express();
 
+app.use(require('./middlewares/cors'))
+
 app.use(require('./routes/index'));
 
 app.use((req, res, next) => next(new NotFoundError('not found')));
