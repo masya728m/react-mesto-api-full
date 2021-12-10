@@ -14,7 +14,7 @@ const auth = require('../middlewares/auth');
 const InvalidDataError = require('../errors/invalidDataError');
 
 router.use(bodyParser.json());
-router.use(bodyParser.urlencoded({extended: true}));
+router.use(bodyParser.urlencoded({ extended: true }));
 router.get('/crash-test', () => {
   setTimeout(() => {
     throw new Error('Server is about to crash...');
@@ -43,7 +43,7 @@ router.post('/signup', celebrate({
       avatar: Joi.string()
         .uri()
         .custom((value) => {
-          if (!validator.isURL(value, {require_protocol: true})) {
+          if (!validator.isURL(value, { require_protocol: true })) {
             throw new InvalidDataError('Failed to validate avatar field');
           }
           return value;

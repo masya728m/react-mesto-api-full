@@ -42,7 +42,7 @@ router.patch('/me/avatar', celebrate({
       avatar: Joi.string()
         .required()
         .custom((value) => {
-          if (!validator.isURL(value, {require_protocol: true})) {
+          if (!validator.isURL(value, { require_protocol: true })) {
             throw new InvalidDataError('Failed to validate avatar field');
           }
           return value;

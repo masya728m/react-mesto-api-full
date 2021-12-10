@@ -4,4 +4,6 @@
 авторизации и регистрации пользователей, операции с карточками и пользователями. Бэкенд расположен в
 директории `backend/`, а фронтенд - в `frontend/`.
 
-https://bulkin.students.nomoredomains.rocks
+Доменное имя: https://bulkin.students.nomoredomains.rocks
+
+Адрес сервера: 51.250.18.126

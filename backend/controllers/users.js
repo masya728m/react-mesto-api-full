@@ -69,12 +69,12 @@ module.exports.login = (req, res, next) => {
   User.findUserByCredentials(email, password)
     .then((user) => {
       const token = jwt.sign(
-        {_id: user._id},
+        { _id: user._id },
         JWT_SECRET,
-        {expiresIn: '1h'}
+        { expiresIn: '1h' }
       );
       res.status(200)
-        .send({token});
+        .send({ token });
     })
     .catch(next);
 };
@@ -101,11 +101,11 @@ module.exports.updateUserProfile = (req, res, next) => {
 };
 
 module.exports.updateUserAvatar = (req, res, next) => {
-  const {avatar} = req.body;
+  const { avatar } = req.body;
   if (!avatar) {
     throw new InvalidDataError('invalid data');
   }
-  User.findByIdAndUpdate(req.user._id, {avatar}, {
+  User.findByIdAndUpdate(req.user._id, { avatar }, {
     new: true,
     runValidators: true
   })

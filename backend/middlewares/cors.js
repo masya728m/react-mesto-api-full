@@ -8,8 +8,8 @@ const allowedCors = [
 const defaultAllowedMethods = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
 module.exports = (req, res, next) => {
-  const {origin} = req.headers;
-  const {method} = req;
+  const { origin } = req.headers;
+  const { method } = req;
   const requestHeaders = req.headers['access-control-request-headers'];
   if (allowedCors.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);

@@ -32,7 +32,7 @@ router.post('/', celebrate({
       link: Joi.string()
         .required()
         .custom((value) => {
-          if (!validator.isURL(value, {require_protocol: true})) {
+          if (!validator.isURL(value, { require_protocol: true })) {
             throw new InvalidDataError('Failed to validate link field');
           }
           return value;
